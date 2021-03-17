@@ -1,6 +1,6 @@
 import random
 
-challenges_1 = ["Hit Someone", "Compliment Someone", "Have a conversation with someone",
+challenges = ["Hit Someone", "Compliment Someone", "Have a conversation with someone",
               "Call Someone"]
 reward = list(range(10, 51, 10))
 
@@ -9,7 +9,7 @@ user_name = input("Please Enter You Name ")
 #user_gender = input("Are You A Male(m) or Female(f)")
 #user_age = int(input("Please Enter You Age "))
 
-rand_ch = random.choice(challenges_1)
+rand_ch = random.choice(challenges)
 rand_rew = random.choice(reward)
 
 def decorate(task):
