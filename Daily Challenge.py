@@ -5,21 +5,20 @@
 
 import random
 
+Stored = {}
 challenges = ["Hit Someone", "Compliment Someone", "Have a conversation with someone",
               "Call Someone"]
-weak_ch = ["1","2","3","4"]
+weak_ch = ["Sing", "Dance", "Eat", "Drink"]
 reward = list(range(10, 51, 10))
-
-# future note: change the user's name to (UsEr)upper.lower.continuously
-user_name = input("Please Enter You Name ")
-#user_gender = input("Are You A Male(m) or Female(f)")
-user_age = int(input("Please Enter You Age "))
 
 rand_ch = random.choice(challenges)
 rand_wk = random.choice(weak_ch)
 rand_rew = random.choice(reward)
-chall = ""
-#future note to keep count of score for the user
+
+# future note: change the user's name to (UsEr)upper.lower.continuously
+user_name = input("Please Enter You Name ")
+# user_gender = input("Are You A Male(m) or Female(f)")
+user_age = int(input("Please Enter You Age "))
 
 
 def decorate(task):
@@ -29,21 +28,24 @@ def decorate(task):
         print("_" * 70 + "\n" + "-" * 70)
     return deco
 
+
 @decorate
 def out_put():
+    chall = ""
+    # future note to keep count of score for the user
     score = 0
-    if (user_age >= 0) and (user_age < 18) :
+    if (user_age >= 0) and (user_age < 18):
         print("Since your age is below 18 you will have restricted access")
         chall = rand_wk
         score += rand_rew
-    elif (user_age >= 18 ) and (user_age < 41 ):
+    elif (user_age >= 18) and (user_age < 41):
         print("You age is optimum for the challenge")
         chall = rand_ch
         score += rand_rew
-    elif (user_age >= 41 ) and (user_age < 120 ):
+    elif (user_age >= 41) and (user_age < 120):
         score = "0"
         return print("Sorry but You are too old to participate")
-    elif user_age >= 120 :
+    elif user_age >= 120:
         score = "0"
         return print("Are you sure your age is correct")
     else:
