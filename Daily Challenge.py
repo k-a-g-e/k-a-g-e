@@ -5,11 +5,10 @@
 
 import random
 
-Stored = {}
 challenges = ["Hit Someone", "Compliment Someone", "Have a conversation with someone",
               "Call Someone"]
 weak_ch = ["Sing", "Dance", "Eat", "Drink"]
-reward = list(range(10, 51, 10))
+reward = [i*10 for i in range(0, 6) ]
 
 rand_ch = random.choice(challenges)
 rand_wk = random.choice(weak_ch)
@@ -43,10 +42,8 @@ def out_put():
         chall = rand_ch
         score += rand_rew
     elif (user_age >= 41) and (user_age < 120):
-        score = "0"
         return print("Sorry but You are too old to participate")
     elif user_age >= 120:
-        score = "0"
         return print("Are you sure your age is correct")
     else:
         print("please enter valid numbers")
